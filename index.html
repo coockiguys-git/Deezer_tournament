@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Deezer Tournament</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>🎵 Deezer Music Tournament</h1>
+
+  <input id="playlistInput" placeholder="Lien ou ID playlist Deezer">
+  <button onclick="loadPlaylist()">Lancer le tournoi</button>
+
+  <div id="battle" style="display:none;">
+    <div class="card" onclick="choose(0)">
+      <h2 id="title1"></h2>
+      <p id="artist1"></p>
+      <audio id="audio1" controls></audio>
+    </div>
+
+    <div class="card" onclick="choose(1)">
+      <h2 id="title2"></h2>
+      <p id="artist2"></p>
+      <audio id="audio2" controls></audio>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
