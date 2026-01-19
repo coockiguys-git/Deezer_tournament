@@ -2,27 +2,69 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Deezer Tournament</title>
+  <title>Deezer Music Tournament</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>🎵 Deezer Music Tournament</h1>
-
-  <input id="playlistInput" placeholder="Lien ou ID playlist Deezer">
-  <button onclick="loadPlaylist()">Lancer le tournoi</button>
-
-  <div id="battle" style="display:none;">
-    <div class="card" onclick="choose(0)">
-      <h2 id="title1"></h2>
-      <p id="artist1"></p>
-      <audio id="audio1" controls></audio>
+  <div class="app">
+<div id="setup-area">
+    <h1 id="site-title">Music Tournament</h1>
+    
+    <div class="input-group">
+        <input type="text" id="playlistInput" placeholder="Coller l'ID ici (ex: 123456)...">
+        <button class="main-btn" onclick="loadPlaylist()">Lancer le tournoi</button>
     </div>
 
-    <div class="card" onclick="choose(1)">
-      <h2 id="title2"></h2>
-      <p id="artist2"></p>
-      <audio id="audio2" controls></audio>
+    <div class="tutorial-container">
+        <h2>✨ Comment obtenir votre code ?</h2>
+        
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <p>Allez sur <strong>Deezer</strong> (ordinateur) et ouvrez votre playlist.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <p>Regardez l'<strong>adresse (URL)</strong> tout en haut de votre navigateur.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <p>Copiez uniquement la <strong>suite de chiffres</strong> à la fin du lien.</p>
+            </div>
+        </div>
+
+        <div class="visual-guide">
+            <p class="label">Exemple visuel :</p>
+            <div class="browser-bar">
+                <span class="lock">🔒</span> deezer.com/fr/playlist/<span class="id-highlight">9238475101</span>
+            </div>
+            <p class="hint">⬆️ C'est ce code qu'il faut copier !</p>
+        </div>
+
+        <div class="warning-box">
+            ⚠️ Votre playlist doit être réglée sur <strong>"Publique"</strong> dans les options Deezer.
+        </div>
+    </div>
+</div>
+    <div id="battle" style="display:none;">
+      
+      <div class="progress-container">
+        <div class="bar" id="progressBar"></div>
+      </div>
+
+      <div class="match">
+        <div class="song" id="songA"></div>
+        <div class="song" id="songB"></div>
+      </div>
+
+      <div class="action-area">
+        <button class="vote-btn btn-left" onclick="choose(0)">CHOISI MOIIIII</button>
+        <button class="vote-btn btn-skip" onclick="skipDuel()">SKIP (on verra plus tard)</button>
+        <button class="vote-btn btn-right" onclick="choose(1)">NON PREND MOI</button>
+      </div>
     </div>
   </div>
 
